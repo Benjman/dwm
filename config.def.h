@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -101,6 +102,9 @@ static Key keys[] = {
   { MODKEY|ShiftMask, XK_0,                     tag,            {.ui = ~0} },               // Move application between tags
   { MODKEY|ShiftMask, XK_Left,                  tagmon,         {.i = -1} },                // Move application to different display
   { MODKEY|ShiftMask, XK_Right,                 tagmon,         {.i = +1} },                // Move application to different display
+  { MODKEY,           XK_minus,                 setgaps,        {.i = -1 } },               // Decreases window gaps
+  { MODKEY,           XK_equal,                 setgaps,        {.i = +1 } },               // Increases window gaps
+  { MODKEY|ShiftMask, XK_equal,                 setgaps,        {.i = 0  } },               // Resets window gaps
 
   TAGKEYS(            XK_1,                     0)
   TAGKEYS(            XK_2,                     1)
