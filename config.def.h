@@ -3,6 +3,7 @@
 // clang-format off
 
 #include "movestack.c"
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -94,6 +95,11 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *browserprivatecmd[]  = { "brave", "--incognito", NULL };
 static const char *printscrncmd[] = { "flameshot", "gui", NULL };
+static const char *volume[3][4] = {
+    {"pulsemixer-wrapper", "--change-volume", "-5", NULL},
+    {"pulsemixer-wrapper", "--change-volume", "+5", NULL},
+    {"pulsemixer-wrapper", "--toggle-mute",   "",   NULL}
+};
 
 static const Key keys[] = {
 	/* modifier           key                       function        argument */
@@ -102,6 +108,11 @@ static const Key keys[] = {
 	{ MODKEY,             XK_q,                     killclient,     {0} },
 	{ MODKEY,             XK_t,                     spawn,          {.v = termcmd } },
 	{ 0,                  XK_Print,                 spawn,          {.v = printscrncmd} },
+	{ 0,                  XF86XK_AudioLowerVolume,  spawn,          {.v = volume[0]} },             // Lower volume
+	{ 0,                  XF86XK_AudioRaiseVolume,  spawn,          {.v = volume[1]} },             // Raise volume
+	{ 0,                  XF86XK_AudioMute,         spawn,          {.v = volume[2]} },             // Mute volume
+
+
 
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
