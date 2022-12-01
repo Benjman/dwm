@@ -111,6 +111,10 @@ static const Key keys[] = {
 	{ 0,                  XF86XK_AudioLowerVolume,  spawn,          {.v = volume[0]} },             // Lower volume
 	{ 0,                  XF86XK_AudioRaiseVolume,  spawn,          {.v = volume[1]} },             // Raise volume
 	{ 0,                  XF86XK_AudioMute,         spawn,          {.v = volume[2]} },             // Mute volume
+	{ MODKEY,             XK_Left,                  focusmon,       {.i = -1 } },
+	{ MODKEY,             XK_Right,                 focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,   XK_Left,                  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,   XK_Right,                 tagmon,         {.i = +1 } },
 
 
 
@@ -135,10 +139,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
