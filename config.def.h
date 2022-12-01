@@ -9,15 +9,38 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_bg[] = "#24283b";
+static const char col_bg_dark[] = "#1f2335";
+static const char col_bg_float[] = "#1f2335";
+static const char col_bg_highlight[] = "#292e42";
+static const char col_bg_popup[] = "#1f2335";
+static const char col_bg_search[] = "#3d59a1";
+static const char col_bg_sidebar[] = "#1f2335";
+static const char col_bg_statusline[] = "#1f2335";
+static const char col_bg_visual[] = "#364a82";
+static const char col_black[] = "#1d202f";
+static const char col_blue[] = "#7aa2f7";
+static const char col_blue0[] = "#3d59a1";
+static const char col_blue1[] = "#2ac3de";
+static const char col_blue2[] = "#0db9d7";
+static const char col_blue5[] = "#89ddff";
+static const char col_blue6[] = "#b4f9f8";
+static const char col_blue7[] = "#394b70";
+static const char col_border[] = "#1d202f";
+static const char col_border_highlight[] = "#29a4bd";
+static const char col_comment[] = "#565f89";
+static const char col_cyan[] = "#7dcfff";
+static const char col_dark3[] = "#545c7e";
+static const char col_dark5[] = "#737aa2";
+static const char col_gray1[] = "#222222";
+static const char col_gray2[] = "#444444";
+static const char col_gray3[] = "#bbbbbb";
+static const char col_gray4[] = "#eeeeee";
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*               fg          bg          border   */
+	[SchemeNorm] = { col_blue5,  col_bg,     col_blue7 },
+	[SchemeSel]  = { col_blue5,  col_blue7,  col_blue7 },
 };
 
 /* tagging */
