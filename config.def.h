@@ -93,6 +93,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenu_font
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *browserprivatecmd[]  = { "brave", "--incognito", NULL };
+static const char *printscrncmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier           key                       function        argument */
@@ -100,6 +101,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_w,                     spawn,          {.v = browserprivatecmd } },
 	{ MODKEY,             XK_q,                     killclient,     {0} },
 	{ MODKEY,             XK_t,                     spawn,          {.v = termcmd } },
+	{ 0,                  XK_Print,                 spawn,          {.v = printscrncmd} },
 
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
