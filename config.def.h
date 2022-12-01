@@ -40,10 +40,6 @@ static const char col_comment[] = "#565f89";
 static const char col_cyan[] = "#7dcfff";
 static const char col_dark3[] = "#545c7e";
 static const char col_dark5[] = "#737aa2";
-static const char col_gray1[] = "#222222";
-static const char col_gray2[] = "#444444";
-static const char col_gray3[] = "#bbbbbb";
-static const char col_gray4[] = "#eeeeee";
 
 static const char *colors[][3]      = {
 	/*               fg          bg          border   */
@@ -93,7 +89,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenu_font, "-nb", col_bg, "-sb", col_bg_search, "-sf", col_cyan, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *browserprivatecmd[]  = { "brave", "--incognito", NULL };
