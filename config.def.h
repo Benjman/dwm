@@ -95,6 +95,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *browserprivatecmd[]  = { "brave", "--incognito", NULL };
 static const char *printscrncmd[] = { "flameshot", "gui", NULL };
+static const char *passmenucmd[] = { "passmenu", NULL };
 static const char *volume[3][4] = {
     {"pulsemixer-wrapper", "--change-volume", "-5", NULL},
     {"pulsemixer-wrapper", "--change-volume", "+5", NULL},
@@ -122,6 +123,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_Right,                 tagmon,         {.i = +1 } },
 	{ 0,                  XF86XK_MonBrightnessDown, spawn,          {.v = backlightcmd[0]} }, // Decrease backlight of the display
 	{ 0,                  XF86XK_MonBrightnessUp,   spawn,          {.v = backlightcmd[1]} }, // Increase backlight of the display
+	{ MODKEY|ShiftMask,   XK_p,                     spawn,          {.v = passmenucmd } },
 
 
 
