@@ -100,6 +100,11 @@ static const char *volume[3][4] = {
     {"pulsemixer-wrapper", "--change-volume", "+5", NULL},
     {"pulsemixer-wrapper", "--toggle-mute",   "",   NULL}
 };
+static const char *backlightcmd[2][3] = {
+    {"backlight", "-dec", NULL},
+    {"backlight", "-inc", NULL},
+};
+
 
 static const Key keys[] = {
 	/* modifier           key                       function        argument */
@@ -115,6 +120,8 @@ static const Key keys[] = {
 	{ MODKEY,             XK_Right,                 focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,   XK_Left,                  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,   XK_Right,                 tagmon,         {.i = +1 } },
+	{ 0,                  XF86XK_MonBrightnessDown, spawn,          {.v = backlightcmd[0]} }, // Decrease backlight of the display
+	{ 0,                  XF86XK_MonBrightnessUp,   spawn,          {.v = backlightcmd[1]} }, // Increase backlight of the display
 
 
 
