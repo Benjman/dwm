@@ -90,6 +90,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenuaudiosinkcmd[] = { "dmenu_audio_sink", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenu_font, "-nb", col_bg, "-sb", col_bg_search, "-sf", col_cyan, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
@@ -124,6 +125,7 @@ static const Key keys[] = {
 	{ 0,                  XF86XK_MonBrightnessDown, spawn,          {.v = backlightcmd[0]} }, // Decrease backlight of the display
 	{ 0,                  XF86XK_MonBrightnessUp,   spawn,          {.v = backlightcmd[1]} }, // Increase backlight of the display
 	{ MODKEY|ShiftMask,   XK_p,                     spawn,          {.v = passmenucmd } },
+	{ MODKEY,             XK_s,                     spawn,          {.v = dmenuaudiosinkcmd } },
 
 
 
