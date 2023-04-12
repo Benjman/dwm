@@ -106,6 +106,7 @@ static const char *backlightcmd[2][3] = {
     {"backlight", "-dec", NULL},
     {"backlight", "-inc", NULL},
 };
+static const char *slockcmd[] = { "slock", NULL };
 
 
 static const Key keys[] = {
@@ -126,6 +127,7 @@ static const Key keys[] = {
 	{ 0,                  XF86XK_MonBrightnessUp,   spawn,          {.v = backlightcmd[1]} }, // Increase backlight of the display
 	{ MODKEY|ShiftMask,   XK_p,                     spawn,          {.v = passmenucmd } },
 	{ MODKEY,             XK_s,                     spawn,          {.v = dmenuaudiosinkcmd } },
+	{ MODKEY|ShiftMask,   XK_l,                     spawn,          {.v = slockcmd } },
 
 
 
