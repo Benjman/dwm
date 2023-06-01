@@ -97,10 +97,6 @@ static const char *browsercmd[]  = { "brave", NULL };
 static const char *browserprivatecmd[]  = { "brave", "--incognito", NULL };
 static const char *printscrncmd[] = { "flameshot", "gui", NULL };
 static const char *passmenucmd[] = { "passmenu", NULL };
-static const char *backlightcmd[2][3] = {
-    {"backlight", "-dec", NULL},
-    {"backlight", "-inc", NULL},
-};
 static const char *slockcmd[] = { "slock", NULL };
 
 
@@ -115,8 +111,6 @@ static const Key keys[] = {
 	{ MODKEY,             XK_Right,                 focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,   XK_Left,                  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,   XK_Right,                 tagmon,         {.i = +1 } },
-	{ 0,                  XF86XK_MonBrightnessDown, spawn,          {.v = backlightcmd[0]} }, // Decrease backlight of the display
-	{ 0,                  XF86XK_MonBrightnessUp,   spawn,          {.v = backlightcmd[1]} }, // Increase backlight of the display
 	{ MODKEY|ShiftMask,   XK_p,                     spawn,          {.v = passmenucmd } },
 	{ MODKEY,             XK_s,                     spawn,          {.v = dmenuaudiosinkcmd } },
 	{ MODKEY|ShiftMask,   XK_l,                     spawn,          {.v = slockcmd } },
